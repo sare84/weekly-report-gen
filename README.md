@@ -1,20 +1,18 @@
-# Projekt zum Erstellen von Protokolldateien
+# Weekly report template generator
 
-## Ausführung
+## Usage
 
 node -r esm index.js
 
 ## Todo
 
-- Config Datei aufbauen mit Bereichen die geschrieben werden sollen
-- Lokalisierung
-- Online stellen
-- Anzahl Tage einstellbar
-- Jahr als Verzeichnis anlegen
+- Creating a config file
+- Possibility to localize the app
+- Config the days 
+- Setup path for the templates
 
 ## Done
 
-- Projektaufbau und Initialisierung ändern
-- Logger reinholen
-- Modularisierung
-- Umbau von '\r\n' auf EOL aus dem os package
+- New project structure
+- Added logger (log4js)
+- Switched from '\r\n' for new line to the EOL from the os package
