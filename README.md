@@ -8,10 +8,17 @@ node -r esm index.js
 
 - Creating a config file
 - Possibility to localize the app
-- Config the days 
+- Config the days
 - Setup path for the templates
 
-## Done
+## Versions
+
+### 0.0.2
+
+- Created app.js and moved content from index.js
+- index.js calls now app.js
+
+### 0.0.1
 
 - New project structure
 - Added logger (log4js)
