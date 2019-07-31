@@ -21,6 +21,7 @@
     "eslint-plugin-import": "^2.18.2"
   },
   "dependencies": {
+    "dotenv": "^8.0.0",
     "esm": "^3.2.25",
     "lodash": "^4.17.15",
     "log4js": "^4.5.1",
