@@ -1,13 +1,15 @@
 import moment from 'moment';
+import _ from 'lodash';
 
 import { logger } from './logger';
+import { config } from './config';
 
 let initData = {};
-const format = 'DD.MM.YYYY';
 
 const setup = async () => {
   logger.debug('Starting setup!');
-  moment.locale('de');
+  moment.locale(_.get(config, 'locale'));
+  const format = _.get(config, 'dateformat');
   
   const kwNumber = moment().format('W');
   const today = moment();

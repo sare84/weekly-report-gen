@@ -4,10 +4,13 @@
 
 node -r esm index.js
 
+## .env
+
+CONFIG_FILE="./src/config/config.json"
+
 ## Todo
 
 - Check the path to the new file -> create it if not there!
-- Creating a config file
 - Possibility to localize the app
 - Config the days
 - Setup path for the templates
@@ -16,6 +19,7 @@ node -r esm index.js
 
 ### 0.0.2
 
+- Creating a config file
 - Added dotenv and .env files
 - Created app.js and moved content from index.js
 - index.js calls now app.js
