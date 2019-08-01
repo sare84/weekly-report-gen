@@ -19,7 +19,7 @@ const setup = async () => {
   const toDateFormat = toDate.format(format);
   
   const filename = `KW${kwNumber}.md`;
-  const path = `.\\reports\\${filename}`;
+  const path = _.get(config, 'path');
   
   initData = {
     kwNumber,

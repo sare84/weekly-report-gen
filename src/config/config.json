@@ -1,4 +1,5 @@
 {
   "locale": "de",
-  "dateformat": "DD.MM.YYYY"
+  "dateformat": "DD.MM.YYYY",
+  "path": "./reports/"
 }

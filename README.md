@@ -10,12 +10,15 @@ CONFIG_FILE="./src/config/config.json"
 
 ## Todo
 
-- Check the path to the new file -> create it if not there!
 - Possibility to localize the app
 - Config the days
-- Setup path for the templates
 
 ## Versions
+
+### 0.0.3
+
+- Check the path to the new file -> create it if not there!
+- Outputpath can be changed in the config.json
 
 ### 0.0.2
 
