@@ -1,5 +1,8 @@
+import _ from 'lodash';
+
 import { writeSubHeader } from './mdHelper';
 import { initData } from '../setup/init';
+import { config } from '../setup/config';
 
 const writeFileHeader = () => {  
   writeSubHeader(`KW ${initData.kwNumber} | ${initData.fromDateFormat} - ${initData.toDateFormat}`, 1);
@@ -7,11 +10,12 @@ const writeFileHeader = () => {
 
 const writeDays = () => {
   writeSubHeader('Tage', 2);
-  
-  for (var i = 1; i < 6; i++) {
-    const day = initData.fromDate.day(i).format('dddd');
-    writeSubHeader(day, 3);
-  }
+
+  const days = _.get(config, 'days');
+  _.forEach(days, day => {
+    const text = initData.fromDate.day(day).format('dddd');
+    writeSubHeader(text, 3);
+  });
 };
 
 const writeNotes = () => {

@@ -8,12 +8,28 @@ node -r esm index.js
 
 CONFIG_FILE="./src/config/config.json"
 
+## Config
+
+```json
+{
+  "locale": "de",               // Localisation
+  "dateformat": "DD.MM.YYYY",   // Output dateformat
+  "path": "./reports/",         // Output path
+  "days": [1,2,3,4,5]           // Configurable days 1 = monday 7 = sunday
+}
+```
+
 ## Todo
 
 - Possibility to localize the app
-- Config the days
+- Config additional topics in config file
+- Add CLI methods for picking the week / weeks
 
 ## Versions
+
+### 0.0.4
+
+- Config the days
 
 ### 0.0.3
 
