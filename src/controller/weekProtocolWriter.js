@@ -26,29 +26,9 @@ const writeAdditionalTopics = () => {
   });
 };
 
-const writeNotes = () => {
-  writeSubHeader('Notizen', 2);
-};
-
-const writeTodo = () => {
-  writeSubHeader('Todo', 2);
-};
-
-const writeDone = () => {
-  writeSubHeader('Done', 2);
-};
-
-const writeAdditional = () => {
-  writeSubHeader('Sonstiges', 2);
-};
-
 const writeProtocol = async () => {
   writeFileHeader();
   writeDays();
-  // writeNotes();
-  // writeTodo();
-  // writeDone();
-  // writeAdditional();
   writeAdditionalTopics();
 };
 

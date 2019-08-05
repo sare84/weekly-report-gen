@@ -36,6 +36,7 @@ CONFIG_FILE="./src/config/config.json"
 ### 0.0.5
 
 - Config additional topics in config file
+- Added order to topics
 
 ### 0.0.4
 
