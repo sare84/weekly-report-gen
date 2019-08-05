@@ -1,5 +1,13 @@
 # Weekly report template generator
 
+Project is used to generate a template for a weekly report
+Contains:
+
+- Written with markdown language
+- Date and week number
+- Days for this week
+- Special additional topics
+
 ## Usage
 
 node -r esm index.js
@@ -20,7 +28,8 @@ CONFIG_FILE="./src/config/config.json"
     {
       "name": "Nodes",
       "parent": null,
-      "level": 2
+      "level": 2,
+      "order": 0
     },
   ]
 }
@@ -28,6 +37,8 @@ CONFIG_FILE="./src/config/config.json"
 
 ## Todo
 
+- Add functions for subfolder (i.e. days)
+- Add recursive functions and parent or childnodes
 - Possibility to localize the app
 - Add CLI methods for picking the week / weeks
 
