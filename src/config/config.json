@@ -7,22 +7,26 @@
     {
       "name": "Nodes",
       "parent": null,
-      "level": 2
+      "level": 2,
+      "order": 10
     },
     {
       "name": "Todo",
       "parent": null,
-      "level": 2
+      "level": 2,
+      "order": 20
     },
     {
       "name": "Done",
       "parent": null,
-      "level": 2
+      "level": 2,
+      "order": 30
     },
     {
       "name": "Additional",
       "parent": null,
-      "level": 2
+      "level": 2,
+      "order": 40
     }
   ]
 }

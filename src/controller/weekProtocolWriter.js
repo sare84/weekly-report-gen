@@ -20,8 +20,8 @@ const writeDays = () => {
 
 const writeAdditionalTopics = () => {
   const additionalTopics = _.get(config, 'additionalTopics');
-  
-  _.forEach(additionalTopics, topic => {
+  const ordered = _.orderBy(additionalTopics, ['order'], ['asc']);
+  _.forEach(ordered, topic => {
     writeSubHeader(_.get(topic, 'name'), _.get(topic, 'level'));
   });
 };
