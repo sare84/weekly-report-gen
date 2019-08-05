@@ -2,5 +2,27 @@
   "locale": "de",
   "dateformat": "DD.MM.YYYY",
   "path": "./reports/",
-  "days": [1,2,3,4,5]
+  "days": [1,2,3,4,5],
+  "additionalTopics": [
+    {
+      "name": "Nodes",
+      "parent": null,
+      "level": 2
+    },
+    {
+      "name": "Todo",
+      "parent": null,
+      "level": 2
+    },
+    {
+      "name": "Done",
+      "parent": null,
+      "level": 2
+    },
+    {
+      "name": "Additional",
+      "parent": null,
+      "level": 2
+    }
+  ]
 }

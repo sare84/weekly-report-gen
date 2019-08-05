@@ -18,6 +18,14 @@ const writeDays = () => {
   });
 };
 
+const writeAdditionalTopics = () => {
+  const additionalTopics = _.get(config, 'additionalTopics');
+  
+  _.forEach(additionalTopics, topic => {
+    writeSubHeader(_.get(topic, 'name'), _.get(topic, 'level'));
+  });
+};
+
 const writeNotes = () => {
   writeSubHeader('Notizen', 2);
 };
@@ -37,10 +45,11 @@ const writeAdditional = () => {
 const writeProtocol = async () => {
   writeFileHeader();
   writeDays();
-  writeNotes();
-  writeTodo();
-  writeDone();
-  writeAdditional(); 
+  // writeNotes();
+  // writeTodo();
+  // writeDone();
+  // writeAdditional();
+  writeAdditionalTopics();
 };
 
 export {

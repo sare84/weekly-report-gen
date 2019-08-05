@@ -15,17 +15,27 @@ CONFIG_FILE="./src/config/config.json"
   "locale": "de",               // Localisation
   "dateformat": "DD.MM.YYYY",   // Output dateformat
   "path": "./reports/",         // Output path
-  "days": [1,2,3,4,5]           // Configurable days 1 = monday 7 = sunday
+  "days": [1,2,3,4,5],          // Configurable days 1 = monday 7 = sunday  
+  "additionalTopics": [         // Additional Topics
+    {
+      "name": "Nodes",
+      "parent": null,
+      "level": 2
+    },
+  ]
 }
 ```
 
 ## Todo
 
 - Possibility to localize the app
-- Config additional topics in config file
 - Add CLI methods for picking the week / weeks
 
 ## Versions
+
+### 0.0.5
+
+- Config additional topics in config file
 
 ### 0.0.4
 
