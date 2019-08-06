@@ -48,6 +48,7 @@ CONFIG_FILE="./src/config/config.json"
 
 - Added functions for subfolder (i.e. days)
   - There is a class with prepared functions and these could be could via their name
+- Refactoring: Moved PreparedFunctions into own file
 
 ### 0.0.5
 

@@ -3,21 +3,12 @@ import _ from 'lodash';
 import { writeSubHeader } from './mdHelper';
 import { initData } from '../setup/init';
 import { config } from '../setup/config';
+import { logger } from '../setup/logger';
+import { PreparedFunctions } from './preparedFunctions.class';
 
 const writeFileHeader = () => {  
   writeSubHeader(`Week ${initData.kwNumber} | ${initData.fromDateFormat} - ${initData.toDateFormat}`, 1);
 };
-
-class PreparedFunctions {
-  writeDays() { 
-    const days = _.get(config, 'days');
-    _.forEach(days, day => {
-      const text = initData.fromDate.day(day).format('dddd');
-      writeSubHeader(text, 3);
-    });
-  }
-}
-
 
 
 const writeAdditionalTopics = () => {
@@ -27,7 +18,12 @@ const writeAdditionalTopics = () => {
   _.forEach(ordered, topic => {
     writeSubHeader(_.get(topic, 'name'), _.get(topic, 'level'));
     if (!_.isEmpty(_.get(topic, 'function'))) {
-      preperedFunctions[_.get(topic, 'function')]();
+      try {
+        preperedFunctions[_.get(topic, 'function')]();
+      } catch (error) {
+        logger.error(`Could not execute function from config. Topic: ${_.get(topic, 'name')} | Function: ${_.get(topic, 'function')} `);
+        logger.error(`Error: ${error}`);
+      }
     }
   });
 };
