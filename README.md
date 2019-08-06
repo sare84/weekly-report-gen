@@ -26,10 +26,11 @@ CONFIG_FILE="./src/config/config.json"
   "days": [1,2,3,4,5],          // Configurable days 1 = monday 7 = sunday  
   "additionalTopics": [         // Additional Topics
     {
-      "name": "Nodes",
+      "name": "Days",
       "parent": null,
       "level": 2,
-      "order": 0
+      "order": 0,
+      "function": "writeDays"
     },
   ]
 }
@@ -37,12 +38,16 @@ CONFIG_FILE="./src/config/config.json"
 
 ## Todo
 
-- Add functions for subfolder (i.e. days)
 - Add recursive functions and parent or childnodes
 - Possibility to localize the app
 - Add CLI methods for picking the week / weeks
 
 ## Versions
+
+### 0.0.6
+
+- Added functions for subfolder (i.e. days)
+  - There is a class with prepared functions and these could be could via their name
 
 ### 0.0.5
 

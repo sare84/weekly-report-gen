@@ -5,6 +5,13 @@
   "days": [1,2,3,4,5],
   "additionalTopics": [
     {
+      "name": "Days",
+      "parent": null,
+      "level": 2,
+      "order": 10,
+      "function": "writeDays"
+    },
+    {
       "name": "Nodes",
       "parent": null,
       "level": 2,
