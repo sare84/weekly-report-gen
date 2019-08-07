@@ -28,7 +28,6 @@ CONFIG_FILE="./src/config/config.json"
     {
       "name": "Days",
       "parent": null,
-      "level": 2,
       "order": 0,
       "function": "writeDays"
     },
@@ -40,7 +39,6 @@ CONFIG_FILE="./src/config/config.json"
 
 - Possibility to localize the app
 - Add CLI methods for picking the week / weeks
-- Remove the level from the config -> Start with level 1 for the main topic and increase via the recursive method
 
 ## Versions
 
@@ -48,6 +46,7 @@ CONFIG_FILE="./src/config/config.json"
 
 - Add recursive functions and parent or childnodes
   - It is now possible to declare childnodes via the parent name
+- Removed the level from the config -> Start with level 1 for the main topic and increase via the recursive method
 
 ### 0.0.6
 

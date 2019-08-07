@@ -20,9 +20,9 @@ const writeFileHeader = () => {
  * Write down a list of topics for one level
  * @param {*} topics 
  */
-const writeTopics = (topics) => {
+const writeTopics = (topics, level) => {
   _.forEach(topics, topic => {
-    writeSubHeader(_.get(topic, 'name'), _.get(topic, 'level'));
+    writeSubHeader(_.get(topic, 'name'), level);
 
     if (!_.isEmpty(_.get(topic, 'function'))) {
       try {
@@ -35,7 +35,7 @@ const writeTopics = (topics) => {
     // Recursive: write down child elements
     const values = getValues(_.get(topic, 'name'));
     if (!_.isEmpty(values)) {
-      writeTopics(values);
+      writeTopics(values, ++level);
     }
 
   });
@@ -57,7 +57,7 @@ const getValues = (parent) => {
  */
 const writeAdditionalTopics = () => {
   const values = getValues(null);
-  writeTopics(values);
+  writeTopics(values, 2);
 };
 
 /**
