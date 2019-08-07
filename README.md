@@ -38,11 +38,16 @@ CONFIG_FILE="./src/config/config.json"
 
 ## Todo
 
-- Add recursive functions and parent or childnodes
 - Possibility to localize the app
 - Add CLI methods for picking the week / weeks
+- Remove the level from the config -> Start with level 1 for the main topic and increase via the recursive method
 
 ## Versions
+
+### 0.0.7
+
+- Add recursive functions and parent or childnodes
+  - It is now possible to declare childnodes via the parent name
 
 ### 0.0.6
 

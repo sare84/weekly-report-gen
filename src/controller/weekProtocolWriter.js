@@ -6,29 +6,66 @@ import { config } from '../setup/config';
 import { logger } from '../setup/logger';
 import { PreparedFunctions } from './preparedFunctions.class';
 
+let additionalTopics = {}; 
+let preparedFunctions = {};
+
+/**
+ * Create the file header with level 1 => #
+ */
 const writeFileHeader = () => {  
   writeSubHeader(`Week ${initData.kwNumber} | ${initData.fromDateFormat} - ${initData.toDateFormat}`, 1);
 };
 
-
-const writeAdditionalTopics = () => {
-  const preperedFunctions = new PreparedFunctions();
-  const additionalTopics = _.get(config, 'additionalTopics');
-  const ordered = _.orderBy(additionalTopics, ['order'], ['asc']);
-  _.forEach(ordered, topic => {
+/**
+ * Write down a list of topics for one level
+ * @param {*} topics 
+ */
+const writeTopics = (topics) => {
+  _.forEach(topics, topic => {
     writeSubHeader(_.get(topic, 'name'), _.get(topic, 'level'));
+
     if (!_.isEmpty(_.get(topic, 'function'))) {
       try {
-        preperedFunctions[_.get(topic, 'function')]();
+        preparedFunctions[_.get(topic, 'function')]();
       } catch (error) {
         logger.error(`Could not execute function from config. Topic: ${_.get(topic, 'name')} | Function: ${_.get(topic, 'function')} `);
         logger.error(`Error: ${error}`);
       }
     }
+    // Recursive: write down child elements
+    const values = getValues(_.get(topic, 'name'));
+    if (!_.isEmpty(values)) {
+      writeTopics(values);
+    }
+
   });
 };
 
+/**
+ * Select all values for a parent name or null
+ * @param {*} parent 
+ */
+const getValues = (parent) => {
+  return _.chain(additionalTopics)
+    .orderBy(['order'], ['asc'])
+    .filter({ 'parent': parent})
+    .value();
+};
+
+/**
+ * Write all additional topics
+ */
+const writeAdditionalTopics = () => {
+  const values = getValues(null);
+  writeTopics(values);
+};
+
+/**
+ * Write protocol start method
+ */
 const writeProtocol = async () => {
+  additionalTopics = _.get(config, 'additionalTopics');
+  preparedFunctions = new PreparedFunctions();
   writeFileHeader();
   writeAdditionalTopics();
 };
