@@ -16,7 +16,7 @@ class PreparedFunctions {
       writeSubHeader(data, text, 3);
     });
   }
-};
+}
 
 export {
   PreparedFunctions
