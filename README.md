@@ -38,9 +38,15 @@ CONFIG_FILE="./src/config/config.json"
 ## Todo
 
 - Possibility to localize the app
-- Add CLI methods for picking the week / weeks
+- Add CLI methods for picking the weeks
 
 ## Versions
+
+### 0.0.8
+
+- Add CLI methods for picking the week
+  - Year is the current year
+  - Week is the first input
 
 ### 0.0.7
 
