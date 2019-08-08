@@ -7,10 +7,10 @@ import { writeLine, writeBlank } from './file';
  * @param {*} text The text
  * @param {*} level The level 1 = # 2 =## ...
  */
-const writeSubHeader = (text, level) => {
+const writeSubHeader = (data, text, level) => {
   const levelString = _.pad('', level, '#');
-  writeLine(`${levelString} ${text}`);
-  writeBlank();
+  writeLine(data, `${levelString} ${text}`);
+  writeBlank(data);
 };
 
 export {

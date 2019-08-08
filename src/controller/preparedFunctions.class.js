@@ -9,11 +9,11 @@ class PreparedFunctions {
   /**
    * Write the days for a week
    */
-  writeDays() { 
+  writeDays(data) { 
     const days = _.get(config, 'days');
     _.forEach(days, day => {
-      const text = initData.fromDate.day(day).format('dddd');
-      writeSubHeader(text, 3);
+      const text = data.fromDate.day(day).format('dddd');
+      writeSubHeader(data, text, 3);
     });
   }
 };

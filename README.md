@@ -7,10 +7,11 @@ Contains:
 - Date and week number
 - Days for this week
 - Special additional topics
+- CLI with week number/s 
 
 ## Usage
 
-node -r esm index.js
+node -r esm index.js <[weeks]>
 
 ## .env
 
@@ -38,15 +39,18 @@ CONFIG_FILE="./src/config/config.json"
 ## Todo
 
 - Possibility to localize the app
-- Add CLI methods for picking the weeks
+- Add checks for week between 1 and 52
+- Add the possibility to add the year to the CLI params
+- Refactor the data usage for the weeks in the arguments
 
 ## Versions
 
 ### 0.0.8
 
-- Add CLI methods for picking the week
+- Added CLI methods for picking the week
   - Year is the current year
   - Week is the first input
+- Added CLI methods for picking the weeks
 
 ### 0.0.7
 
