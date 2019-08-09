@@ -39,11 +39,14 @@ CONFIG_FILE="./src/config/config.json"
 ## Todo
 
 - Possibility to localize the app
-- Add checks for week between 1 and 52
 - Add the possibility to add the year to the CLI params
 - Refactor the data usage for the weeks in the arguments
 
 ## Versions
+
+### 0.0.9
+
+- Added checks for week between 1 and 52
 
 ### 0.0.8
 

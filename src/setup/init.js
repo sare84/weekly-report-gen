@@ -20,6 +20,10 @@ const setup = async () => {
   const year = moment().format('Y');
 
   _.forEach(args, arg => {
+    if (arg < 1 || arg > 52) {
+      logger.error(`Number ${arg} is no valid week number!`);
+      return;
+    }
     const kwNumber = _.isEmpty(arg) ? moment().format('W') : moment(`${arg} ${year}`, 'ww gggg').format('W');
     const today = _.isEmpty(arg) ? moment() : moment(`${arg} ${year}`, 'ww gggg');
 
