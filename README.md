@@ -11,7 +11,13 @@ Contains:
 
 ## Usage
 
-node -r esm index.js <[weeks]>
+You can now add the week and the year to the params
+
+node -r esm index.js <["weeknumber/year"]>
+
+Example:
+
+npm start 52/2018 51/2019 01/2011
 
 ## .env
 
@@ -39,7 +45,6 @@ CONFIG_FILE="./src/config/config.json"
 ## Todo
 
 - Possibility to localize the app
-- Add the possibility to add the year to the CLI params
 - Refactor the data usage for the weeks in the arguments
 
 ## Versions
@@ -47,6 +52,7 @@ CONFIG_FILE="./src/config/config.json"
 ### 0.0.9
 
 - Added checks for week between 1 and 52
+- Added the possibility to add the year to the CLI params
 
 ### 0.0.8
 

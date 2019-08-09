@@ -19,13 +19,18 @@ const setup = async () => {
 
   const year = moment().format('Y');
 
-  _.forEach(args, arg => {
+  _.forEach(args, argComplete => {
+    const splittedArg = _.split(argComplete, '/');
+    const arg = splittedArg[0];
+    const argYear = splittedArg[1];
+
     if (arg < 1 || arg > 52) {
       logger.error(`Number ${arg} is no valid week number!`);
       return;
     }
-    const kwNumber = _.isEmpty(arg) ? moment().format('W') : moment(`${arg} ${year}`, 'ww gggg').format('W');
-    const today = _.isEmpty(arg) ? moment() : moment(`${arg} ${year}`, 'ww gggg');
+
+    const kwNumber = _.isEmpty(arg) ? moment().format('W') : moment(`${arg} ${argYear}`, 'ww gggg').format('W');
+    const today = _.isEmpty(arg) ? moment() : moment(`${arg} ${argYear}`, 'ww gggg');
 
     const fromDate = today.startOf('isoWeek');
     const fromDateFormat = fromDate.format(format);
