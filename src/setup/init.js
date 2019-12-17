@@ -30,13 +30,13 @@ const setup = async () => {
     }
 
     const kwNumber = _.isEmpty(arg) ? moment().format('W') : moment(`${arg} ${argYear}`, 'ww gggg').format('W');
-    const today = _.isEmpty(arg) ? moment() : moment(`${arg} ${argYear}`, 'ww gggg');
+    const today = _.isEmpty(arg) ? moment() : moment(`${arg} ${argYear}`, 'ww gggg');  
+    const fromDate = moment(today).startOf('isoWeek');
 
-    const fromDate = today.startOf('isoWeek');
     const fromDateFormat = fromDate.format(format);
-    const toDate = today.endOf('isoWeek');
+    const toDate = moment(today).endOf('isoWeek');
     const toDateFormat = toDate.format(format);
-
+    
     const filename = `KW${kwNumber}.md`;
     const path = _.get(config, 'path');
 

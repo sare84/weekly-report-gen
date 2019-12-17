@@ -31,6 +31,7 @@ CONFIG_FILE="./src/config/config.json"
   "dateformat": "DD.MM.YYYY",   // Output dateformat
   "path": "./reports/",         // Output path
   "days": [1,2,3,4,5],          // Configurable days 1 = monday 7 = sunday  
+  "dayDate": true,              // Add date behind the days
   "additionalTopics": [         // Additional Topics
     {
       "name": "Days",

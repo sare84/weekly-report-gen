@@ -3,6 +3,7 @@
   "dateformat": "DD.MM.YYYY",
   "path": "./reports/",
   "days": [1,2,3,4,5],
+  "dayDate": true,
   "additionalTopics": [
     {
       "name": "Days",

@@ -1,7 +1,6 @@
 import _ from 'lodash';
 
 import { config } from '../setup/config';
-import { initData } from '../setup/init';
 import { writeSubHeader } from './mdHelper';
 
 class PreparedFunctions {
@@ -10,9 +9,13 @@ class PreparedFunctions {
    * Write the days for a week
    */
   writeDays(data) { 
-    const days = _.get(config, 'days');
+    const { days, dayDate, dateformat } = config;
     _.forEach(days, day => {
-      const text = data.fromDate.day(day).format('dddd');
+      let text = data.fromDate.day(day).format('dddd');
+      if (dayDate) {
+        const dateString = data.fromDate.day(day).format(dateformat);
+        text = `${text} - ${dateString}`;
+      }
       writeSubHeader(data, text, 3);
     });
   }
